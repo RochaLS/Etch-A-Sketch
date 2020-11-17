@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: darkgrey;
+}
+
+.container {
+  width: 50%;
+  padding: 30px;
+  margin: auto;
+}
+
+.sketch-container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  border: 30px solid red;
+  gap: 2px;
+  width: 560px;
+  height: 560px;
+  margin: auto;
+}
+
+.cell {
+  background-color: white;
+  min-height: 2px;
+}
+
+.header {
+  text-align: center;
+}
+
+.menu {
+  margin-bottom: 10px;
+}
