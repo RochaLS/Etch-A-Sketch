@@ -6,8 +6,7 @@ function createGrid(size) {
         div.className = 'cell';
         div.addEventListener('mouseover', () => {
             div.style.backgroundColor = 'black';
-            // div.style.backgroundColor = `rgb(${Math.floor((Math.random() * 255) + 1)}, ${Math.floor((Math.random() * 255) + 1)}, ${Math.floor((Math.random() * 10) + 1)})`;
-        })
+        });
 
         sketchContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
         sketchContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -16,26 +15,20 @@ function createGrid(size) {
 }
 
 function menuSetup() {
-    const resetBtn = document.querySelector('.reset');
-    resetBtn.addEventListener('click', (e) => {
-        clearGrid()
-        askGridSize()
+    const slider = document.getElementById('myRange');
+    const sliderContainer = document.querySelector('.slidecontainer');
+    const sliderValueText = document.querySelector('.sliderValue');
+    slider.addEventListener('input', () => {
+        clearGrid();
+        createGrid(slider.value);
+        sliderValueText.innerText = `${slider.value}x${slider.value}`;
     })
+
+    sliderContainer.appendChild(sliderValueText);  
 }
 
 function clearGrid() {
     document.querySelectorAll('.cell').forEach(e => e.remove()); 
-}
-
-function askGridSize() {
-    const size = prompt('Type a grid size from 2 to 100');
-
-    if (size >= 2 && size <= 100) {
-        createGrid(size);
-    } else {
-        alert('Invalid Size');
-        createGrid(16);
-    }
 }
 
 createGrid(16); // 16x16

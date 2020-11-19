@@ -4,6 +4,8 @@
 
 body {
   background-color: darkgrey;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -16,8 +18,8 @@ body {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
-  border: 30px solid red;
-  gap: 2px;
+  border: 30px solid #d92027;
+  border-radius: 10px;
   width: 560px;
   height: 560px;
   margin: auto;
@@ -32,6 +34,33 @@ body {
   text-align: center;
 }
 
+.subheader {
+  text-align: center;
+}
+
 .menu {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.slidecontainer {
+  display: block;
+  width: 560px;
+  text-align: center;
+}
+
+.slider {
+  margin-right: 10px;
+  width: 400px;
+}
+
+.sliderValue {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footer {
+  margin-top: 10px;
+  text-align: center;
 }
